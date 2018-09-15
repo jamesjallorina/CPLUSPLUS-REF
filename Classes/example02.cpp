@@ -58,17 +58,17 @@ void human::setWeight(int h)
 }
 
 void human::setHeight(int w)
-}
+{
 	weight = w;
 }
 
 int human::getHeight()
-}
+{
 	return height;
 }
 
 int human::getWeight()
-}
+{
 	return weight;
 }
 
