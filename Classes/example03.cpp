@@ -52,11 +52,6 @@ human::human()
 	weight = nullptr;
 }	//default constructor
 
-human::human() : height(nullptr), weight(nullptr)		//member initializer list
-{
-	std::cout << "object is created using initializer list " << std::ENDL;
-}
-
 human::human(const human &humanoid)
 {
 	height = new int;
