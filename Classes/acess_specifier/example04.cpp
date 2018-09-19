@@ -61,7 +61,7 @@ int main(int argc, char **argv)
 	std::cout << "foo's public height: " << foo.public_height << std::ENDL;
 
 	
-	std::cout << "foo's private weight: " << foo.private_height << std::ENDL;		//this will cause error //we need to provide a public getter functions to 
+	std::cout << "foo's private weight: " << foo.private_weight << std::ENDL;		//this will cause error //we need to provide a public getter functions to 
 	std::cout << "foo's private height: " << foo.private_height << std::ENDL;		// access the private data members
 	
 	return 0;
