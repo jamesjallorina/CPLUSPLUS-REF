@@ -81,7 +81,7 @@ int main(int argc, char **argv)
 	//foo.setHeight(4.5);
 	
 	std::cout << "foo's weight: " << foo.getWeight() << std::ENDL;
-	std::cout << "foo's height: " << foo.setWeight() << std::ENDL;
+	std::cout << "foo's height: " << foo.getWeight() << std::ENDL;
 
 	return 0;
 }
