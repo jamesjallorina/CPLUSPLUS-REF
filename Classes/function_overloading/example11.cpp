@@ -115,7 +115,7 @@ int main(int argc, char **argv)
 	human foo(5.8, 50.0, {50.0, 100.5, 45.0, 0, 0, 0});	 //all examples not yet tested so I don't really sure if we the ctor can initialize 
 														//a struct using double bracket :)
 	
-	capabilities *foo_t = foo.getHumanCap;
+	capabilities *foo_t = foo.getHumanCap();
 	
 	std::cout << "human vertical jump: " << foo_t->dvertical_jump << std::ENDL;
 	std::cout << "human speed: " << foo_t->dspeed << std::ENDL;
