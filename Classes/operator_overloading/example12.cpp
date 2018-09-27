@@ -29,6 +29,15 @@
 
 #include <iostream>
 
+typedef struct {
+	double dvertical_jump;
+	double dspeed;
+	double dstrength;
+	int ivertical_jump;
+	int ispeed;
+	int istrength;
+}ability_t;
+
 class human	
 {	
 	public:
@@ -52,14 +61,7 @@ class human
 		double height;
 		double weight;
 		//cababilities
-		struct ability{
-			double dvertical_jump;
-			double dspeed;
-			double dstrength;
-			int ivertical_jump;
-			int ispeed;
-			int istrength;
-		} capabilities;
+		ability_t capabilities;
 };
 
 human::human(){} //default ctor
@@ -117,7 +119,7 @@ void human::setStrength(int st)
 	cababilities.istrength = st;
 }
 
-capabilities *human::getHumanCap()
+ability_t *human::getHumanCap()
 {
 	return &cababilities;
 }
@@ -142,9 +144,9 @@ int main(int argc, char **argv)
 	
 	human loo = foo + poo;
 	
-	capabilities *foo_t = foo.getHumanCap();
-	cababilities *poo_t = poo.getHumanCap();
-	capabilities *loo_t = loo.getHumanCap();
+	ability_t *foo_t = foo.getHumanCap();
+	ability_t *poo_t = poo.getHumanCap();
+	ability_t *loo_t = loo.getHumanCap();
 	
 	
 	std::cout << "human foo vertical jump: " << foo_t->dvertical_jump << std::ENDL;
