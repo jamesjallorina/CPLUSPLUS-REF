@@ -18,6 +18,16 @@
 
 #include <iostream>
 
+typedef struct {
+	double dvertical_jump;
+	double dspeed;
+	double dstrength;
+	int ivertical_jump;
+	int ispeed;
+	int istrength;
+}ability_t;
+
+
 class human	
 {	
 	public:
@@ -35,23 +45,17 @@ class human
 		//public getter functions
 		double getHeight();
 		double getWeight();
-		cababilities *getHumanCap();
+		ability_t *getHumanCap();
 	private:
 		double height;
 		double weight;
 		//cababilities
-		struct ability{
-			double dvertical_jump;
-			double dspeed;
-			double dstrength;
-			int ivertical_jump;
-			int ispeed;
-			int istrength;
-		} capabilities;
+		ability_t cababilities;
+
 };
 
 human::human(){} //default ctor
-human::human(double h, double w, cababilities c) : height(h), weight(w), capabilities(c) {}
+human::human(double h, double w, ability_t c) : height(h), weight(w), cababilities(c) {}
 human::~human(){}	//default dtor
 
 
@@ -115,7 +119,7 @@ int main(int argc, char **argv)
 	human foo(5.8, 50.0, {50.0, 100.5, 45.0, 0, 0, 0});	 //all examples not yet tested so I don't really sure if we the ctor can initialize 
 														//a struct using double bracket :)
 	
-	capabilities *foo_t = foo.getHumanCap();
+	ability_t *foo_t = foo.getHumanCap();
 	
 	std::cout << "human vertical jump: " << foo_t->dvertical_jump << std::ENDL;
 	std::cout << "human speed: " << foo_t->dspeed << std::ENDL;
