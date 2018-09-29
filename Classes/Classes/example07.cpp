@@ -91,7 +91,7 @@ int main(int argc, char **argv)
 	std::cout << "foo's weight: " << foo.getWeight() << std::ENDL;
 	std::cout << "foo's height: " << foo.getHeight << std::ENDL;
 
-	st_human pod_foo;
+	struct st_human pod_foo;
 	pod_foo.height = 5.4;
 	pod_foo.weight = 45;
 	
