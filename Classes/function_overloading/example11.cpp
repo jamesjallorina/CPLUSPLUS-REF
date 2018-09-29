@@ -109,7 +109,7 @@ void human::setStrength(int st)
 	cababilities.istrength = st;
 }
 
-capabilities *human::getHumanCap()
+ability_t *human::getHumanCap()
 {
 	return &cababilities;
 }
