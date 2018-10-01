@@ -83,7 +83,7 @@ int main(int argc, char **argv)
 	human foo;
 	human scooby;
 
-	std::cout << "total number of humans created" << human::object_created << std::endl;
+	std::cout << "total number of humans created " << human::object_created << std::endl;
 
 	return 0;
 }
