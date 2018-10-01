@@ -6,18 +6,18 @@
 *	Written by	:	James Jallorina
 *	Date		:	09-16-2018
 *
-*	Note:	
+*	Note:
 *	Copy constructors
 *	A copy constructor of class T is a non-template constructor whose
-*	first parameter is T&‍, const T&‍, volatile T&‍, or const volatile T&‍, 
-*	and either there are no other parameters, or the rest of the parameters 
+*	first parameter is T&‍, const T&‍, volatile T&‍, or const volatile T&‍,
+*	and either there are no other parameters, or the rest of the parameters
 *	all have default values.
-*	
-*	
+*
+*
 *	Syntax:
-*	class_name ( const class_name & )	(1)	
-*	class_name ( const class_name & ) = default;	(2)	
-*	class_name ( const class_name & ) = delete;	(3)	
+*	class_name ( const class_name & )	(1)
+*	class_name ( const class_name & ) = default;	(2)
+*	class_name ( const class_name & ) = delete;	(3)
 *
 *
 *
@@ -29,80 +29,80 @@
 #include <iostream>
 
 class human
-{	
-	public:
-		human();
-		human(human &android);
-		~human();
-		//public setter functions
-		void setHeight(int h);
-		void setWeight(int w);
-		//public getter functions
-		int getHeight();
-		int getWeight();
-	
-	private:
-		int *height;
-		int *weight;
+{
+public:
+	human();
+	human( human &android);
+	~human();
+	//public setter functions
+	void setHeight(double h);
+	void setWeight(double w);
+	//public getter functions
+	double getHeight();
+	double getWeight();
+
+private:
+	double *height;
+	double *weight;
 };
 
-human::human() 
+human::human()
 {
 	height = nullptr;
 	weight = nullptr;
 }	//default constructor
 
-human::human(const human &humanoid)
+human::human(human &android)
 {
-	height = new int;
-	*height = humanoid.getHeight();
-	weight = new int;
-	*weight = human.getWeight()
+	height = new double;
+	*height = android.getHeight();
+	weight = new double;
+	*weight = android.getWeight();
 }	//copy constructor
 
 human::~human()
 {
-	if(height)
+	if (height)
 	{
 		delete height;
 		height = nullptr;
 	}
-	if(weight)
+	if (weight)
 	{
-			delete weight;
-			weight = nullptr;
+		delete weight;
+		weight = nullptr;
 	}
-	
+
 }	//default destructor
 
 
-void human::setWeight(int h)
-{	
-	if(!height)
-		height = new int;
+void human::setWeight(double h)
+{
+	if (!height)
+		height = new double;
 	*height = h;
 }
 
-void human::setHeight(int w)
+void human::setHeight(double w)
 {
-	if(!weight)
-		weight = new int;
+	if (!weight)
+		weight = new double;
 	*weight = w;
 }
 
-int human::getHeight()
+double human::getHeight()
 {
-	if(!height)
+	if (!height)
 		return 0;
-	
+
 	return *height;
 }
 
-int human::getWeight()
+double human::getWeight()
 {
-	if(!weight)
+	if (!weight)
 		return 0;
-	
+
 	return *weight;
 }
 
@@ -113,14 +113,14 @@ int main(int argc, char **argv)
 	human foo;
 	foo.setWeight(50);
 	foo.setHeight(4.5);
-	
-	std::cout << "foo's weight: " << foo.getWeight() << std::ENDL;
-	std::cout << "foo's height: " << foo.getHeight << std::ENDL;
 
+	std::cout << "foo's height: " << foo.getHeight() << std::endl;
+	std::cout << "foo's weight: " << foo.getWeight() << std::endl;
+	
 	human foodroid = foo;
-	
-	std::cout << "foodroid's weight: " << foodroid.getWeight() << std::ENDL;
-	std::cout << "foodroid's height: " << foodroid.getHeight() << std::ENDL;
-	
+
+	std::cout << "foodroid's height: " << foodroid.getHeight() << std::endl;
+	std::cout << "foodroid's weight: " << foodroid.getWeight() << std::endl;
+
 	return 0;
 }
