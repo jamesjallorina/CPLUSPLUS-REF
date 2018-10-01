@@ -6,21 +6,21 @@
 *	Written by	:	James Jallorina
 *	Date		:	09-16-2018
 *
-*	Note:	
+*	Note:
 *	Copy constructors
 *	A class is a user-defined type.
-*	A class type is defined by class-specifier, which appears in decl-specifier-seq 
+*	A class type is defined by class-specifier, which appears in decl-specifier-seq
 *	of the declaration syntax. The class specifier has the following syntax:
-*	
-*	
-*	
-*	
-*	
+*
+*
+*
+*
+*
 *	Syntax:
-*	class-key attr class-head-name { member-specification }	(1)	
-*	class-key attr class-head-name : base-specifier-list { member-specification }	(2)	
-*	
-*	
+*	class-key attr class-head-name { member-specification }	(1)
+*	class-key attr class-head-name : base-specifier-list { member-specification }	(2)
+*
+*
 *
 *
 *
@@ -33,41 +33,41 @@
 
 //This is  user defined type struct an POD (plain old datatypes) which is originated in C PL
 //all member variables is default in public
-struct st_human{ 	
-	int weight;
+struct st_human {
+	double weight;
 	double height;
 };
 
 //This 
-class human	
-{	
-	public:
-		human();
-		~human();
-		//public setter functions
-		void setHeight(double h);
-		void setWeight(int w);
-		//public getter functions
-		double getHeight();
-		int getWeight();
-	
-	private:
-		double height;
-		int weight;
+class human
+{
+public:
+	human();
+	~human();
+	//public setter functions
+	void setHeight(double h);
+	void setWeight(double w);
+	//public getter functions
+	double getHeight();
+	double getWeight();
+
+private:
+	double height;
+	double weight;
 };
 
 human::human() {}
 human::~human() {}	//default destructor
 
 
-void human::setWeight(int h)
-{	
-	height = h;
+void human::setWeight(double h)
+{
+	weight = h;
 }
 
-void human::setHeight(int w)
+void human::setHeight(double w)
 {
-	weight = w;
+	height = w;
 }
 
 double human::getHeight()
@@ -75,7 +75,7 @@ double human::getHeight()
 	return height;
 }
 
-int human::getWeight()
+double human::getWeight()
 {
 	return weight;
 }
@@ -85,19 +85,19 @@ int human::getWeight()
 int main(int argc, char **argv)
 {
 	human foo;
-	foo.setWeight(50);
 	foo.setHeight(5.5);
-	
-	std::cout << "foo's weight: " << foo.getWeight() << std::ENDL;
-	std::cout << "foo's height: " << foo.getHeight << std::ENDL;
+	foo.setWeight(50.0);
+
+
+	std::cout << "foo's height: " << foo.getHeight() << std::endl;
+	std::cout << "foo's weight: " << foo.getWeight() << std::endl;
 
 	struct st_human pod_foo;
 	pod_foo.height = 5.4;
-	pod_foo.weight = 45;
-	
-	std::cout << "pod_foo's weight: " << pod_foo.weight << std::ENDL;
-	std::cout << "pod_foo's height: " << pod_foo.height << std::ENDL;
+	pod_foo.weight = 45.0;
 
-	
+	std::cout << "pod_foo's height: " << pod_foo.height << std::endl;		//this is POD (Plain Old Data Structure) type in C-style
+	std::cout << "pod_foo's weight: " << pod_foo.weight << std::endl;		//this is POD (Plain Old Data Structure) type in C-style
+
 	return 0;
 }
