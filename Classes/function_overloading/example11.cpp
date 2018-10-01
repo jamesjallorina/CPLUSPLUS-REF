@@ -5,10 +5,10 @@
 *	Written by	:	James Jallorina
 *	Date		:	09-25-2018
 *
-*	Note:	
+*	Note:
 *	You can have multiple definitions for the same function name in the same scope.
-*	The definition of the function must differ from each other by the types and/or 
-*	the number of arguments in the argument list. You cannot overload function declarations 
+*	The definition of the function must differ from each other by the types and/or
+*	the number of arguments in the argument list. You cannot overload function declarations
 *	that differ only by return type.
 *
 *	source:	https://www.tutorialspoint.com/cplusplus/cpp_overloading.htm
@@ -28,39 +28,38 @@ typedef struct {
 }ability_t;
 
 
-class human	
-{	
-	public:
-		human();
-		~human();
-		//public setter functions
-		void setHeight(double h);
-		void setWeight(double w);
-		void setVerticalJump(double v);
-		void setVerticalJump(int v);
-		void setSpeed(double s);
-		void setSpeed(int s);
-		void setStrength(double st);
-		void setStrength(int st);
-		//public getter functions
-		double getHeight();
-		double getWeight();
-		ability_t *getHumanCap();
-	private:
-		double height;
-		double weight;
-		//cababilities
-		ability_t cababilities;
+class human
+{
+public:
+	human(double h, double w, ability_t c);
+	~human();
+	//public setter functions
+	void setHeight(double h);
+	void setWeight(double w);
+	void setVerticalJump(double v);
+	void setVerticalJump(int v);
+	void setSpeed(double s);
+	void setSpeed(int s);
+	void setStrength(double st);
+	void setStrength(int st);
+	//public getter functions
+	double getHeight();
+	double getWeight();
+	ability_t *getHumanCap();
+private:
+	double height;
+	double weight;
+	//cababilities
+	ability_t capabilities;
 
 };
 
-human::human(){} //default ctor
-human::human(double h, double w, ability_t c) : height(h), weight(w), cababilities(c) {}
-human::~human(){}	//default dtor
+human::human(double h, double w, ability_t c) : height(h), weight(w), capabilities(c) {}
+human::~human() {}	//default dtor
 
 
-void human::setWeight(int h)
-{	
+void human::setWeight(double h)
+{
 	height = h;
 }
 
@@ -81,17 +80,17 @@ double human::getWeight()
 
 void human::setVerticalJump(double v)
 {
-	cababilities.dvertical_jump = v;
+	capabilities.dvertical_jump = v;
 }
 
 void human::setVerticalJump(int v)
 {
-	cababilities.ivertical_jump = v;
+	capabilities.ivertical_jump = v;
 }
 
 void human::setSpeed(double s)
 {
-	cababilities.dspeed = s;
+	capabilities.dspeed = s;
 }
 
 void human::setSpeed(int s)
@@ -106,24 +105,24 @@ void human::setStrength(double st)
 
 void human::setStrength(int st)
 {
-	cababilities.istrength = st;
+	capabilities.istrength = st;
 }
 
 ability_t *human::getHumanCap()
 {
-	return &cababilities;
+	return &capabilities;
 }
 
 int main(int argc, char **argv)
 {
-	human foo(5.8, 50.0, {50.0, 100.5, 45.0, 0, 0, 0});	 //all examples not yet tested so I don't really sure if we the ctor can initialize 
+	human foo(5.8, 50.0, { 50.0, 100.5, 45.0, 0, 0, 0 });	 //all examples not yet tested so I don't really sure if we the ctor can initialize 
 														//a struct using double bracket :)
-	
+
 	ability_t *foo_t = foo.getHumanCap();
-	
-	std::cout << "human vertical jump: " << foo_t->dvertical_jump << std::ENDL;
-	std::cout << "human speed: " << foo_t->dspeed << std::ENDL;
-	std::cout << "human strength: " << foo_t->dstrength << std::ENDL;
-	
+
+	std::cout << "human vertical jump: " << foo_t->dvertical_jump << std::endl;
+	std::cout << "human speed: " << foo_t->dspeed << std::endl;
+	std::cout << "human strength: " << foo_t->dstrength << std::endl;
+
 	return 0;
 }
