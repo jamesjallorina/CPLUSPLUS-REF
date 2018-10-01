@@ -26,7 +26,6 @@
 
 #include <iostream>
 
-using namespace std;
 
 class human
 {
@@ -74,11 +73,13 @@ double human::getWeight()
 int main(int argc, char **argv)
 {
 	human foo;
-	foo.setWeight(50.0);
 	foo.setHeight(4.5);
+	foo.setWeight(50.0);
 
-	cout << "foo's weight: " << foo.getWeight() << endl;
-	cout << "foo's height: " << foo.getHeight() << endl;
+
+	std::cout << "foo's height: " << foo.getHeight() << std::endl;
+	std::cout << "foo's weight: " << foo.getWeight() << std::endl;
+	
 
 	return 0;
 }
