@@ -29,45 +29,46 @@ class human
 {	
 	public:
 		human();
+		human(double h, double w);
 		~human();
 		//public setter functions
-		void setHeight(int h);
-		void setWeight(int w);
+		void setHeight(double h);
+		void setWeight(double w);
 		//public getter functions
-		int getHeight();
-		int getWeight();
+		double getHeight();
+		double getWeight();
 	
 	private:
-		int height;
-		int weight;
+		double height;
+		double weight;
 };
 
 human::human() {}	//default constructor
-human::human(int h, int w) : height(h), weight(w)		//member initializer list
+human::human(double h, double w) : height(h), weight(w)		//member initializer list
 {
-	std::cout << "object is created using initializer list " << std::ENDL;
-	std::cout << "height : " << height << std::ENDL;
-	std::cout << "weight : " << weight << std::ENDL;
+	std::cout << "object is created using initializer list " << std::endl;
+	std::cout << "height : " << height << std::endl;
+	std::cout << "weight : " << weight << std::endl;
 }
 human::~human(){}	//default destructor
 
 
-void human::setWeight(int h)
+void human::setWeight(double h)
 {
 	height = h;
 }
 
-void human::setHeight(int w)
+void human::setHeight(double w)
 {
 	weight = w;
 }
 
-int human::getHeight()
+double human::getHeight()
 {
 	return height;
 }
 
-int human::getWeight()
+double human::getWeight()
 {
 	return weight;
 }
@@ -76,12 +77,10 @@ int human::getWeight()
 
 int main(int argc, char **argv)
 {
-	human foo(50, 4.5);
-	//foo.setWeight(50);
-	//foo.setHeight(4.5);
+	human foo(50.0, 60);
 	
-	std::cout << "foo's weight: " << foo.getWeight() << std::ENDL;
-	std::cout << "foo's height: " << foo.getWeight() << std::ENDL;
+	std::cout << "foo's height: " << foo.getHeight() << std::endl;
+	std::cout << "foo's weight: " << foo.getWeight() << std::endl;
 
 	return 0;
 }
