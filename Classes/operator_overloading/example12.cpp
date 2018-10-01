@@ -139,8 +139,7 @@ human human::operator+(const human &h)
 
 int main(int argc, char **argv)
 {
-	human foo(5.8, 50.0, { 50.0, 100.5, 45.0, 0, 0, 0 });	 //all examples not yet tested so I don't really sure if we the ctor can initialize 
-															//a struct using double bracket :)
+	human foo(5.8, 50.0, { 50.0, 100.5, 45.0, 0, 0, 0 });
 	human poo(6.0, 60.0, { 70.0, 120.8, 45.3, 0, 0, 0 });
 
 	human loo = foo + poo;
