@@ -5,9 +5,11 @@
 *	Written by	:	James Jallorina
 *	Date		:	10-21-2018
 *
+*	Description: 
+*		A simple implementation of singleton. Later we will explain a more advanced singleton
+*	design pattern.
 *
-*
-*	source:	https://en.cppreference.com/w/cpp/language/operators
+*	source:	https://stackoverflow.com/questions/6568486/when-do-we-need-a-private-constructor-in-c
 ******************************************************************/
 
 
