@@ -1,0 +1,5 @@
+Here are the list of good references of design patterns
+1.Modern C++ Design: Generic Programming and Design Patterns Applied by Andrei Alexandrescu
+
+Here are the list of good references of modern C++
+1. The C++ Programming Language by Bjarne Stroustrup
